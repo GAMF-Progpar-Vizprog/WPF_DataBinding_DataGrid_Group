@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPF_DataBinding_DataGrid_Auto_Ex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_DataBinding_DataGrid_Auto_Ex"
+        mc:Ignorable="d"
+        Title="DataGrid with grouping" Height="450" Width="800">
+	<Window.Resources>
+		<local:BConverter x:Key="BConverter"/>
+	</Window.Resources>
+	<DataGrid x:Name="dgData" AutoGenerateColumns="False" 
+						     ItemsSource="{Binding}"
+								 IsReadOnly="True"
+								 CanUserReorderColumns="True"
+								 CanUserResizeColumns="True"
+								 CanUserSortColumns="True">
+		<DataGrid.Columns>
+			<DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+			<DataGridTextColumn Header="Gender" 
+          Binding="{Binding Gender}" />
+			<DataGridCheckBoxColumn Header="Degree" 
+          Binding="{Binding HasDegree}"/>
+			<DataGridHyperlinkColumn Header="Homepage" 
+          Binding="{Binding Homepage}"/>
+			<DataGridTemplateColumn Header="Picture" Width="100"
+          IsReadOnly="True">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate>
+						<Image Source="{Binding ProfilePicture}" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+		</DataGrid.Columns>
+		<DataGrid.GroupStyle>
+			<GroupStyle>
+				<GroupStyle.HeaderTemplate>
+					<DataTemplate>
+						<StackPanel>
+							<TextBlock Text="{Binding Path=Name}" />
+						</StackPanel>
+					</DataTemplate>
+				</GroupStyle.HeaderTemplate>
+				<GroupStyle.ContainerStyle>
+					<Style TargetType="{x:Type GroupItem}">
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="{x:Type GroupItem}">
+									<!-- Csoportonként összecsukható/kinyitható panel, kezdetben nyitva. -->
+									<Expander IsExpanded="True">
+										<Expander.Header>
+											<StackPanel Orientation="Horizontal" Margin="5">
+												<TextBlock Text="Degree"/>
+												<TextBlock Text="{Binding Path=Name, Converter={StaticResource BConverter}}" Margin="5,0,5,0"/>
+												<TextBlock Text=": "/>
+												<TextBlock Text="{Binding Path=ItemCount}" Margin="5,0,5,0"/>
+												<TextBlock Text="db."/>
+											</StackPanel>
+										</Expander.Header>
+										<ItemsPresenter />
+									</Expander>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</GroupStyle.ContainerStyle>
+			</GroupStyle>
+		</DataGrid.GroupStyle>
+	</DataGrid>
+
+</Window>
