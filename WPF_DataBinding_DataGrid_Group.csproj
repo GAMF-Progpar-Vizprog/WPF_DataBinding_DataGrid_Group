@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <AssemblyName>WPF-DataBinding-DataGrid-Auto_Ex</AssemblyName>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows7.0</TargetFramework>
     <RootNamespace>WPF_DataBinding_DataGrid_Auto_Ex</RootNamespace>
