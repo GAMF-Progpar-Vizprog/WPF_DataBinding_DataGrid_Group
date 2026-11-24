@@ -2,7 +2,7 @@
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WPF_DataBinding_DataGrid_Auto_Ex;
+namespace WPF_DataBinding_DataGrid_Group;
 
 public partial class MainWindow : Window
 {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace WPF_DataBinding_DataGrid_Auto_Ex
+namespace WPF_DataBinding_DataGrid_Group
 {
 	class BConverter:IValueConverter
 	{

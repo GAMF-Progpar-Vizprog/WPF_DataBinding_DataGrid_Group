@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace WPF_DataBinding_DataGrid_Auto_Ex;
+namespace WPF_DataBinding_DataGrid_Group;
 
 /// <summary>
 /// Interaction logic for App.xaml

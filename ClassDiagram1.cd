@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="WPF_DataBinding_DataGrid_Auto_Ex.Instructor">
+  <Class Name="WPF_DataBinding_DataGrid_Group.Instructor">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAABAAAQAAAAAAAAABIAAAAAAAAA=</HashCode>
       <FileName>Instructor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="WPF_DataBinding_DataGrid_Auto_Ex.Gender">
+  <Enum Name="WPF_DataBinding_DataGrid_Group.Gender">
     <Position X="2.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
